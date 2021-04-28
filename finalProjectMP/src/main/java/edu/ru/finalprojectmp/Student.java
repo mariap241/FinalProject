@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class Student {
     private String name;
     private String grade;
-    private int IDNumber;
+    private long IDNumber;
 
     public String getName() {
         return name;
@@ -25,14 +25,21 @@ public class Student {
         this.grade = grade;
     }
 
-    public int getIDNumber() {
+    public long getIDNumber() {
         return IDNumber;
     }
 
-    public void setIDNumber(int IDNumber) {
+    public void setIDNumber(long IDNumber) {
         this.IDNumber = IDNumber;
     }
     
+    public Student(String name, String grade, long IDNumber){
+        this.name = name;
+        this.grade = grade;
+        this.IDNumber = IDNumber;
+        
+}
+            
     public void addStudent(){
         String testStudent;
         String testGrade;
@@ -52,5 +59,12 @@ public class Student {
         //ask for students ID number
         System.out.println("Enter student's ID number: ");
         testIDNumber = keyboard.nextLong();
+    }
+    
+    public void display(){
+        System.out.println("---------------");
+        System.out.println("Student: " + name);
+        System.out.println("Grade: " + grade);
+        System.out.println("ID Number: " + IDNumber);
     }
 }
